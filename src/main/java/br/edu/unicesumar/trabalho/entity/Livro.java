@@ -10,7 +10,9 @@ public class Livro {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String titulo;
+    @Column(name = "escritor")
     private String autor;
+    @Column(name = "ano")
     private Integer anoPublicado;
 
     public Livro() {}
