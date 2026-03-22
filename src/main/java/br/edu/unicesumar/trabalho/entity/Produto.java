@@ -5,14 +5,16 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table("tb_produto")
+@Table(name = "tb_produto")
 public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "produto")
     private String nome;
     private BigDecimal preco;
+    @Column(name = "quantidadeEmEstoque")
     private Integer quantidade;
 
     public Produto() {}
