@@ -36,13 +36,13 @@ public class LivroController {
     }
 
     @GetMapping("/{id}")
-    public  ResponseEntity<Livro> buscarLivroPorId(@PathVariable Integer id) {
+    public  ResponseEntity<Livro> buscarLivroPorId(@PathVariable Long id) {
         Livro requeste = livroService.buscarLivroPorId(id);
         return ResponseEntity.ok().body(requeste);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarLivroPorId(@PathVariable Integer id) {
+    public ResponseEntity<Void> deletarLivroPorId(@PathVariable Long id) {
         Livro requeste = livroService.buscarLivroPorId(id);
         return   ResponseEntity.noContent().build();
     }
