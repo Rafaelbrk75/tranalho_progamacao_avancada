@@ -3,7 +3,7 @@ package br.edu.unicesumar.trabalho.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tbl_livro")
+@Table(name = "tb_livro")
 public class Livro {
 
     @Id
