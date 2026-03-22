@@ -18,7 +18,7 @@ public class LivroService {
         return livroRepository.findAll();
     }
 
-    public Livro buscarLivroPorId(Integer id) {
+    public Livro buscarLivroPorId(Long id) {
         return livroRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Livro não encontrado"));
     }
@@ -27,7 +27,7 @@ public class LivroService {
         return livroRepository.save(livro);
     }
 
-    public void deletarLivro(Integer id) {
+    public void deletarLivro(Long id) {
         livroRepository.deleteById(id);
     }
 
