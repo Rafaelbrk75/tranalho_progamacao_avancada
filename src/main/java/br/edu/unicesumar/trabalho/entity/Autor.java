@@ -11,8 +11,10 @@ public class Autor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "apelido")
     private String nome;
     private String nacionalidade;
+    @Column(name = "diaNascimento")
     private LocalDate dataNascimento;
 
     public Autor() {}
