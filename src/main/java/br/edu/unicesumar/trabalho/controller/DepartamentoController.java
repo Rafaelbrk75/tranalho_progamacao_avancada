@@ -18,7 +18,7 @@ public class DepartamentoController {
     private DepartamentoService departamentoService;
 
     @PostMapping
-    public ResponseEntity<Departamento> criarDepartamento(Departamento departamento){
+    public ResponseEntity<Departamento> criarDepartamento(@RequestBody Departamento departamento){
         Departamento request =  departamentoService.criarDepartamento(departamento);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri()
                 .path("/{id}").buildAndExpand(request.getId())
@@ -33,13 +33,13 @@ public class DepartamentoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Departamento> buscarDepartamentoPorId(Long id){
+    public ResponseEntity<Departamento> buscarDepartamentoPorId(@PathVariable Long id){
         Departamento request = departamentoService.buscarDepatamentoPorId(id);
         return ResponseEntity.ok().body(request);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarDepartamentoPorId(Long id){
+    public ResponseEntity<Void> deletarDepartamentoPorId(@PathVariable Long id){
         departamentoService.deletarDepartamentoPorId(id);
         return ResponseEntity.noContent().build();
     }

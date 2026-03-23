@@ -33,13 +33,13 @@ public class ProjetoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Projeto> buscarProjetoPorId(Long id) {
+    public ResponseEntity<Projeto> buscarProjetoPorId(@PathVariable Long id) {
         Projeto request = projetoService.buscarProjetoPorId(id);
         return ResponseEntity.ok().body(request);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarProjetoPorId(Long id) {
+    public ResponseEntity<Void> deletarProjetoPorId(@PathVariable Long id) {
         projetoService.deletarProjetoPorId(id);
         return ResponseEntity.ok().build();
     }

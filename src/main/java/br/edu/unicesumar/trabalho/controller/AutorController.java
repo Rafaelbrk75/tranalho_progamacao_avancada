@@ -18,7 +18,7 @@ public class AutorController {
     private AutorService autorService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Autor> listarAutorPorId(Long id){
+    public ResponseEntity<Autor> listarAutorPorId(@PathVariable Long id){
         Autor request = autorService.buscarAutorPorId(id);
         return ResponseEntity.ok(request);
     }
@@ -30,7 +30,7 @@ public class AutorController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deletarAutorPorId(Long id){
+    public ResponseEntity<Void> deletarAutorPorId(@PathVariable Long id){
         autorService.deletarAutorPorId(id);
         return ResponseEntity.ok().build();
     }
