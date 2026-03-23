@@ -40,7 +40,7 @@ public class ProdutoController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarProdutoPorId(@PathVariable Long id){
-        Produto produto = produtoService.buscarPorId(id);
+        produtoService.excluirProduto(id);
         return ResponseEntity.noContent().build();
     }
 

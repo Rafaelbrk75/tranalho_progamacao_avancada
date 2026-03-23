@@ -43,8 +43,8 @@ public class LivroController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarLivroPorId(@PathVariable Long id) {
-        Livro requeste = livroService.buscarLivroPorId(id);
-        return   ResponseEntity.noContent().build();
+        livroService.deletarLivro(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
